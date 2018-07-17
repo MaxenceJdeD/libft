@@ -6,7 +6,7 @@
 /*   By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 19:26:10 by mjacques          #+#    #+#             */
-/*   Updated: 2018/07/15 19:24:36 by mjacques         ###   ########.fr       */
+/*   Updated: 2018/07/17 14:39:45 by mjacques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char			**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	if (!s || !c)
-		return ((void *)0);
+		return (NULL);
 	words = ft_count_words(s, c);
 	if (!(tab = (char **)malloc(sizeof(char *) * (words + 1))))
 		return (NULL);

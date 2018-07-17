@@ -6,7 +6,7 @@
 /*   By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 15:26:54 by mjacques          #+#    #+#             */
-/*   Updated: 2018/07/15 13:45:41 by mjacques         ###   ########.fr       */
+/*   Updated: 2018/07/17 14:46:44 by mjacques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	while (ISSPACE(str[i]) || ISSPACE2(str[i]))
 		i++;
-	if (str[i] == 45)
+	if (str[i] == '-')
 		sign = -1;
-	if (str[i] == 45 || str[i] == 43)
+	if (str[i] == '-' || str[i] == '+')
 		i++;
-	while (str[i] && str[i] >= 48 && str[i] <= 57)
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		nb = ((nb * 10 + str[i]) - 48);
 		i++;

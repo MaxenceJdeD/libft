@@ -6,21 +6,11 @@
 /*   By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 17:03:02 by mjacques          #+#    #+#             */
-/*   Updated: 2018/07/15 16:20:02 by mjacques         ###   ########.fr       */
+/*   Updated: 2018/07/17 15:05:25 by mjacques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*ft_strtrimnul(void)
-{
-	char	*str;
-
-	if (!(str = (char *)malloc(sizeof(char) * 1)))
-		return (NULL);
-	str[0] = '\0';
-	return (str);
-}
 
 char		*ft_strtrim(char const *s)
 {
@@ -38,8 +28,8 @@ char		*ft_strtrim(char const *s)
 	while (ISSPACE(s[j]) && j != 0)
 		j--;
 	if ((i == 0 && ft_strlen(s) == 0) || j == 0)
-		return (ft_strtrimnul());
-	if (!(str = (char *)malloc(sizeof(char) * (j - i) + 1)))
+		return ("");
+	if (!(str = (char *)malloc(sizeof(char) * (j - i) + 2)))
 		return (NULL);
 	k = 0;
 	while (k <= (j - i))
