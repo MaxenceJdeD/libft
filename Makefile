@@ -6,7 +6,7 @@
 #    By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/09 11:32:00 by mjacques          #+#    #+#              #
-#    Updated: 2018/07/17 15:03:17 by mjacques         ###   ########.fr        #
+#    Updated: 2018/07/24 15:52:30 by mjacques         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,9 @@ FILES = ft_atoi.c\
 		ft_strsub.c\
 		ft_strtrim.c\
 		ft_tolower.c\
-		ft_toupper.c
+		ft_toupper.c\
+		ft_strappend.c
+		
 OBJECTS = ./*.o
 
 $(NAME): $(OBJECTS)

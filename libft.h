@@ -6,7 +6,7 @@
 /*   By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 11:39:42 by mjacques          #+#    #+#             */
-/*   Updated: 2018/07/15 14:07:04 by mjacques         ###   ########.fr       */
+/*   Updated: 2018/07/24 15:52:04 by mjacques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,7 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+char				*ft_strappend(char *str, char c);
 
 #endif
