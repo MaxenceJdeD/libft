@@ -6,7 +6,7 @@
 /*   By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 11:39:42 by mjacques          #+#    #+#             */
-/*   Updated: 2018/08/02 22:23:43 by mjacques         ###   ########.fr       */
+/*   Updated: 2018/08/02 23:08:02 by mjacques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,6 @@ char				*ft_itoa_base(int64_t value, int base);
 
 void				ft_putwchar(wchar_t c);
 void				ft_putwstr(wchar_t *str);
+size_t				ft_wcharlen(wchar_t c);
+size_t				ft_wstrlen(wchar_t *str);
 #endif

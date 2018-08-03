@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putwchar.c                                      :+:      :+:    :+:   */
+/*   ft_wcharlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjacques <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/02 22:09:19 by mjacques          #+#    #+#             */
-/*   Updated: 2018/08/02 22:51:36 by mjacques         ###   ########.fr       */
+/*   Created: 2018/08/02 22:52:25 by mjacques          #+#    #+#             */
+/*   Updated: 2018/08/02 22:58:45 by mjacques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putwchar(wchar_t c)
+size_t	ft_wcharlen(wchar_t c)
 {
+	size_t	size;
+
+	size = 0;
 	if (c <= 0x7f)
-		ft_putchar(c);
+		size = 1;
 	else if (c <= 0x7ff)
-	{
-		ft_putchar((c >> 6) + 0xC0);
-		ft_putchar((c & 0x3f) + 0x80);
-	}
+		size = 2;
 	else if (c <= 0xffff)
-	{
-		ft_putchar((c >> 12) + 0xE0);
-		ft_putchar((c >> 6 & 0x3F) + 0x80);
-		ft_putchar((c & 0x3F) + 0x80);
-	}
+		size = 3;
 	else if (c <= 0x10ffff)
-	{
-		ft_putchar((c >> 18) + 0xF0);
-		ft_putchar(((c >> 12) & 0x3F) + 0x80);
-		ft_putchar(((c >> 6) & 0x3F) + 0x80);
-		ft_putchar((c & 0x3F) + 0x80);
-	}
+		size = 4;
+	return (size);
 }
