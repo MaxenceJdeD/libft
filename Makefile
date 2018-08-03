@@ -6,7 +6,7 @@
 #    By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/09 11:32:00 by mjacques          #+#    #+#              #
-#    Updated: 2018/08/01 23:42:11 by mjacques         ###   ########.fr        #
+#    Updated: 2018/08/02 22:23:01 by mjacques         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,9 @@ FILES = ft_atoi.c\
 		ft_toupper.c\
 		ft_strappend.c\
 		ft_strlcpy.c\
-		ft_itoa_base.c
+		ft_itoa_base.c\
+		ft_putwchar.c\
+		ft_putwstr.c
 
 OBJECTS = ./*.o
 

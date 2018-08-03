@@ -6,7 +6,7 @@
 /*   By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 11:39:42 by mjacques          #+#    #+#             */
-/*   Updated: 2018/08/02 01:15:15 by mjacques         ###   ########.fr       */
+/*   Updated: 2018/08/02 22:23:43 by mjacques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 char				*ft_strappend(char *str, char c);
 char				*ft_strlcpy(const char *src, size_t len);
-char	*ft_itoa_base(int64_t value, int base);
+char				*ft_itoa_base(int64_t value, int base);
 
+void				ft_putwchar(wchar_t c);
+void				ft_putwstr(wchar_t *str);
 #endif
