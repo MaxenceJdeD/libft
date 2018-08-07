@@ -20,7 +20,7 @@ char	*ft_itoa_base(int64_t value, int base)
 	char		*nstr;
 
 	nstr = &str[64];
-	tmp = value;
+	tmp = value < 0 ? -value : value;
 	while (tmp)
 	{
 		*--nstr = basetab[tmp % base];
