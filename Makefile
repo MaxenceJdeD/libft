@@ -80,7 +80,8 @@ FILES			= srcs/ft_atoi.c\
 						srcs/ft_putwchar.c\
 						srcs/ft_putwstr.c\
 						srcs/ft_wcharlen.c\
-						srcs/ft_wstrlen.c
+						srcs/ft_wstrlen.c\
+						srcs/ft_int_swap.c
 
 OBJECTS		= $(FILES:.c=.o)
 
