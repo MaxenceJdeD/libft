@@ -6,27 +6,30 @@
 /*   By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 23:40:31 by mjacques          #+#    #+#             */
-/*   Updated: 2018/08/12 19:08:55 by mjacques         ###   ########.fr       */
+/*   Updated: 2018/09/10 02:11:24 by mjacques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libft.h"
 
-char	*ft_itoa_base(int64_t value, int base)
+char	*ft_itoa_base(int64_t value, int base, const char *basetab)
 {
-	static char	basetab[] = "0123456789abcdef";
-	static char	str[65];
-	uint64_t	tmp;
-	char		*nstr;
+	uint64_t	nbr;
+	size_t		size;
+	char		*str;
 
-	nstr = &str[64];
-	tmp = value < 0 ? -value : value;
-	while (tmp)
-	{
-		*--nstr = basetab[tmp % base];
-		tmp = tmp / base;
-	}
+	nbr = (value < 0) ? -value : value;
+	size = (value < 0 && base == 10) ? 2 : 1;
+	while ((nbr /= base) > 0)
+		size++;
+	if (!(str = ft_strnew(size)))
+		return (NULL);
+	nbr = (value < 0) ? -value : value;
+	str = (str + size);
+	*--str = basetab[nbr % base];
+	while ((nbr /= base) > 0)
+		*--str = basetab[nbr % base];
 	if (value < 0 && base == 10)
-		*--nstr = '-';
-	return (nstr);
+		*--str = '-';
+	return (str);
 }

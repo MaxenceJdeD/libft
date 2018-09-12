@@ -6,7 +6,7 @@
 #    By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/09 11:32:00 by mjacques          #+#    #+#              #
-#    Updated: 2018/08/29 15:36:45 by mjacques         ###   ########.fr        #
+#    Updated: 2018/09/10 11:51:26 by mjacques         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ FILES			= srcs/ft_atoi.c\
 						srcs/ft_tolower.c\
 						srcs/ft_toupper.c\
 						srcs/ft_strappend.c\
-						srcs/ft_strlcpy.c\
+						srcs/ft_strmcpy.c\
 						srcs/ft_itoa_base.c\
 						srcs/ft_putwchar.c\
 						srcs/ft_putwstr.c\
