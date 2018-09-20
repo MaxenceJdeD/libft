@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/libft.h"
+#include "libft.h"
 
 char	*ft_itoa_base(int64_t value, int base, const char *basetab)
 {
