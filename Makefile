@@ -6,7 +6,7 @@
 #    By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/09 11:32:00 by mjacques          #+#    #+#              #
-#    Updated: 2018/09/19 23:39:31 by mjacques         ###   ########.fr        #
+#    Updated: 2018/09/20 00:53:46 by mjacques         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,9 +34,17 @@ STRING		= ft_strcat.c ft_strchr.c ft_strclr.c ft_strcmp.c ft_strcpy.c\
 			  ft_strtrim.c ft_strappend.c ft_strmcpy.c ft_wstrlen.c
 CHAR		= ft_tolower.c ft_toupper.c ft_wcharlen.c
 
+GNL			= get_next_line.c
+
+PRINTF		= ft_printf.c ft_arguments.c\
+			  ft_converser_1.c ft_converser_2.c ft_converser_3.c\
+			  ft_converser_free.c ft_converser_width.c ft_converser_precision.c
+
 FUNCTIONS	= $(IS) $(STRUCT) $(MEMORY) $(NUMBER) $(PRINT) $(STRING) $(CHAR)
 
-FILES		= $(addprefix srcs/, $(FUNCTIONS))
+FILES		= $(addprefix srcs/, $(FUNCTIONS))\
+			  $(addprefix srcs/, $(addprefix gnl/, $(GNL)))\
+			  $(addprefix srcs/, $(addprefix ft_printf/, $(PRINTF)))
 
 OBJECTS		= $(FILES:.c=.o)
 
@@ -45,21 +53,22 @@ OBJECTS		= $(FILES:.c=.o)
 all: $(NAMELIB)
 
 $(OBJECTS): $(FILES)
-	@echo -n 'Compiling $(subst .a,,$(NAMELIB))...'
 	@$(CC) $(CFLAGS) -c $(FILES) -I $(HEADER)
 	@mv $(FUNCTIONS:.c=.o) srcs/
+	@mv $(GNL:.c=.o) srcs/gnl/
+	@mv $(PRINTF:.c=.o) srcs/ft_printf/
 
 $(NAMELIB): $(OBJECTS)
 	@ar rc $(NAMELIB) $(OBJECTS)
 	@ranlib $(NAMELIB)
-	@echo "\t\t\033[32mDone!\033[0m"
+	@echo "\033[32mLibft compiled!\033[0m"
 
 clean:
 	@$(RM) $(OBJECTS)
 
 fclean: clean
-	@echo -n 'Cleaning  $(subst .a,,$(NAMELIB))...'
 	@$(RM) $(NAMELIB)
-	@echo "\t\t\033[31mDone!\033[0m"
+	@echo "\033[31mLibft cleaned!\033[0m"
 
 re: fclean all
+

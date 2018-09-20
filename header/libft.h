@@ -6,7 +6,7 @@
 /*   By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 11:39:42 by mjacques          #+#    #+#             */
-/*   Updated: 2018/09/10 11:50:54 by mjacques         ###   ########.fr       */
+/*   Updated: 2018/09/20 00:16:38 by mjacques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <string.h>
+
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 # define ISSPACE(str) (str == ' ' || str == '\t' || str == '\n')
 # define ISSPACE2(str) (str == '\r' || str == '\v' || str == '\f')
