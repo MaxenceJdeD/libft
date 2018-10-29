@@ -6,7 +6,7 @@
 /*   By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 11:39:42 by mjacques          #+#    #+#             */
-/*   Updated: 2018/09/20 00:16:38 by mjacques         ###   ########.fr       */
+/*   Updated: 2018/10/28 20:55:48 by mjacques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,6 @@ size_t				ft_wstrlen(wchar_t *str);
 
 uint32_t			swap_int32(uint32_t x);
 uint64_t			swap_int64(uint64_t x);
+
+void				ft_error(char *str);
 #endif
