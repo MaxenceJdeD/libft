@@ -6,7 +6,7 @@
 #    By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/09 11:32:00 by mjacques          #+#    #+#              #
-#    Updated: 2018/09/20 00:53:46 by mjacques         ###   ########.fr        #
+#    Updated: 2018/10/28 20:47:39 by mjacques         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ RM			= rm -rf
 NAMELIB		= libft.a
 CFLAGS		= -Wall -Wextra -Werror
 
-HEADER		= header/
+HEADER		= -I header/
 
 IS			= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c
 STRUCT		= ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c\
@@ -37,7 +37,7 @@ CHAR		= ft_tolower.c ft_toupper.c ft_wcharlen.c
 GNL			= get_next_line.c
 
 PRINTF		= ft_printf.c ft_arguments.c\
-			  ft_converser_1.c ft_converser_2.c ft_converser_3.c\
+			  ft_converser_sc.c ft_converser_pxu.c ft_converser_d.c\
 			  ft_converser_free.c ft_converser_width.c ft_converser_precision.c
 
 FUNCTIONS	= $(IS) $(STRUCT) $(MEMORY) $(NUMBER) $(PRINT) $(STRING) $(CHAR)
@@ -52,11 +52,8 @@ OBJECTS		= $(FILES:.c=.o)
 
 all: $(NAMELIB)
 
-$(OBJECTS): $(FILES)
-	@$(CC) $(CFLAGS) -c $(FILES) -I $(HEADER)
-	@mv $(FUNCTIONS:.c=.o) srcs/
-	@mv $(GNL:.c=.o) srcs/gnl/
-	@mv $(PRINTF:.c=.o) srcs/ft_printf/
+%.o: %.c
+	@$(CC) $(CFLAGS) $(HEADER) -c $< -o $@
 
 $(NAMELIB): $(OBJECTS)
 	@ar rc $(NAMELIB) $(OBJECTS)
@@ -71,4 +68,3 @@ fclean: clean
 	@echo "\033[31mLibft cleaned!\033[0m"
 
 re: fclean all
-

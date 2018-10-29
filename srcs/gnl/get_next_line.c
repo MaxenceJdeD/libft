@@ -6,7 +6,7 @@
 /*   By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/21 20:54:33 by mjacques          #+#    #+#             */
-/*   Updated: 2018/09/20 00:56:46 by mjacques         ###   ########.fr       */
+/*   Updated: 2018/10/28 20:44:05 by mjacques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,3 @@ int		get_next_line(const int fd, char **line)
 	str[fd] = var.tmp;
 	return (1);
 }
-
