@@ -6,7 +6,7 @@
 #    By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/09 11:32:00 by mjacques          #+#    #+#              #
-#    Updated: 2018/10/28 20:57:04 by mjacques         ###   ########.fr        #
+#    Updated: 2018/11/28 20:54:23 by mjacques         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ RM			= rm -rf
 NAMELIB		= libft.a
 CFLAGS		= -Wall -Wextra -Werror
 
-HEADER		= -I header/
+INCLUDES	= -I includes/
 
 IS			= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c
 STRUCT		= ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c\
@@ -53,18 +53,16 @@ OBJECTS		= $(FILES:.c=.o)
 all: $(NAMELIB)
 
 %.o: %.c
-	@$(CC) $(CFLAGS) $(HEADER) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(NAMELIB): $(OBJECTS)
 	@ar rc $(NAMELIB) $(OBJECTS)
 	@ranlib $(NAMELIB)
-	@echo "\033[32mLibft compiled!\033[0m"
 
 clean:
 	@$(RM) $(OBJECTS)
 
 fclean: clean
 	@$(RM) $(NAMELIB)
-	@echo "\033[31mLibft cleaned!\033[0m"
 
 re: fclean all
