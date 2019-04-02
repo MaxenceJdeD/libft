@@ -6,7 +6,7 @@
 #    By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/09 11:32:00 by mjacques          #+#    #+#              #
-#    Updated: 2018/12/12 21:08:05 by mjacques         ###   ########.fr        #
+#    Updated: 2019/04/02 15:31:46 by mjacques         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ STRUCT		= ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c\
 			  ft_lstnew.c
 MEMORY		= ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memcpy.c ft_memcmp.c\
 			  ft_memchr.c ft_memdel.c ft_memmove.c ft_memset.c
-NUMBER		= ft_atoi.c ft_itoa.c ft_itoa_base.c ft_int_swap.c
+NUMBER		= ft_atoi.c ft_itoa.c ft_itoa_base.c ft_int_swap.c ft_strtoi.c
 PRINT		= ft_putchar_fd.c ft_putchar.c ft_putendl_fd.c ft_putendl.c\
 			  ft_putnbr_fd.c ft_putnbr.c ft_putstr_fd.c ft_putstr.c\
 			  ft_putwchar.c ft_putwstr.c

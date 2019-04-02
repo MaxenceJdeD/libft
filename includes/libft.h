@@ -6,7 +6,7 @@
 /*   By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 11:39:42 by mjacques          #+#    #+#             */
-/*   Updated: 2018/12/12 21:04:17 by mjacques         ###   ########.fr       */
+/*   Updated: 2019/04/02 15:32:13 by mjacques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <string.h>
+# include <limits.h>
 
 # include "ft_printf.h"
 # include "get_next_line.h"
@@ -109,4 +110,7 @@ void				ft_error(char *str);
 
 char				**ft_splitspace(char *str);
 void				ft_ptrdel(char **ptr);
+
+int					ft_strtoi(char *str, char **endptr);
+
 #endif
