@@ -6,7 +6,7 @@
 /*   By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 11:39:42 by mjacques          #+#    #+#             */
-/*   Updated: 2019/04/02 15:32:13 by mjacques         ###   ########.fr       */
+/*   Updated: 2019/04/26 15:38:39 by mjacques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,5 +112,7 @@ char				**ft_splitspace(char *str);
 void				ft_ptrdel(char **ptr);
 
 int					ft_strtoi(char *str, char **endptr);
+
+double				ft_strtod(char *str, char **endptr);
 
 #endif
