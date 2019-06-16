@@ -6,7 +6,7 @@
 #    By: mjacques <mjacques@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/09 11:32:00 by mjacques          #+#    #+#              #
-#    Updated: 2019/04/26 15:38:59 by mjacques         ###   ########.fr        #
+#    Updated: 2019/06/15 22:42:52 by mjacques         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ STRING		= ft_strcat.c ft_strchr.c ft_strclr.c ft_strcmp.c ft_strcpy.c\
 			  ft_strjoin.c ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c\
 			  ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c\
 			  ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c\
-			  ft_strtrim.c ft_strappend.c ft_strmcpy.c ft_wstrlen.c\
+			  ft_strtrim.c ft_strappend.c ft_strndup.c ft_wstrlen.c\
 			  ft_splitspace.c ft_ptrdel.c
 CHAR		= ft_tolower.c ft_toupper.c ft_wcharlen.c
 
