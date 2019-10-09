@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#define SPACE(x) (ISSPACE(x) || ISSPACE2(x))
 
 static size_t	ft_wordnbr(char *str)
 {
@@ -19,25 +18,26 @@ static size_t	ft_wordnbr(char *str)
 	size_t	size;
 
 	size = 0;
-	i = -1;
-	while (str[++i])
+	i = 0;
+	while (str[i])
 	{
-		if (i == 0 && !SPACE(str[i]))
-			size += 1;
-		else if (!SPACE(str[i]) && SPACE(str[i - 1]))
-			size += 1;
+		if (i == 0 && !ft_isspace(str[i]))
+			++size;
+		else if (!ft_isspace(str[i]) && ft_isspace(str[i - 1]))
+			++size;
+		++i;
 	}
 	return (size);
 }
 
 static size_t	ft_wordlen(char *str)
 {
-	size_t	size;
+	size_t	i;
 
-	size = 0;
-	while (str[size] && !SPACE(str[size]))
-		size++;
-	return (size);
+	i = 0;
+	while (str[i] && !ft_isspace(str[i]))
+		++i;
+	return (i);
 }
 
 char			**ft_splitspace(char *str)
@@ -53,8 +53,8 @@ char			**ft_splitspace(char *str)
 	i = -1;
 	while (++i < size)
 	{
-		while (*str && SPACE(*str))
-			str++;
+		while (*str && ft_isspace(*str))
+			++str;
 		len = ft_wordlen(str);
 		tab[i] = ft_strsub(str, 0, len);
 		str += len;

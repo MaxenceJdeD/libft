@@ -19,18 +19,18 @@ int			ft_strtoi(char *str, char **endptr)
 	long	nbr;
 
 	i = 0;
-	while (str[i] && (ISSPACE(str[i]) || ISSPACE2(str[i])))
-		i++;
+	while (str[i] && ft_isspace(str[i]))
+		++i;
 	sign = (str[i] == '-') ? -1 : 1;
 	if (str[i] == '-' || str[i] == '+')
-		i++;
+		++i;
 	nbr = 0;
 	while (str[i] && ft_isdigit(str[i]))
 	{
 		nbr = (nbr * 10) + str[i] - 48;
 		if ((nbr * sign) > INT_MAX || (nbr * sign) < INT_MIN)
 			break ;
-		i++;
+		++i;
 	}
 	*endptr = &str[i];
 	return ((int)nbr * sign);

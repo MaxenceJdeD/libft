@@ -16,6 +16,6 @@ void	ft_putendl(char const *s)
 {
 	if (!s)
 		return ;
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	write(STDOUT_FILENO, s, ft_strlen(s));
+	write(STDOUT_FILENO, "\n", 1);
 }

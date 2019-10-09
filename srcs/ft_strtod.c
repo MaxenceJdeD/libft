@@ -23,7 +23,7 @@ static double	decimal_handle(char *str, char **endptr)
 	{
 		nbr = nbr + (*str - 48) * decim;
 		decim = decim / 10;
-		str += 1;
+		++str;
 	}
 	*endptr = str;
 	return (nbr);
@@ -34,20 +34,20 @@ double			ft_strtod(char *str, char **endptr)
 	int		sign;
 	double	nbr;
 
-	while (*str && (ISSPACE(*str) || ISSPACE2(*str)))
-		str += 1;
+	while (*str && ft_isspace(*str))
+		++str;
 	sign = (*str == '-') ? -1 : 1;
 	if (*str == '-' || *str == '+')
-		str += 1;
+		++str;
 	nbr = 0;
 	while (*str && ft_isdigit(*str))
 	{
 		nbr = (nbr * 10) + *str - 48;
-		str += 1;
+		++str;
 	}
 	if (*str == '.')
 	{
-		str += 1;
+		++str;
 		nbr = nbr + decimal_handle(str, endptr);
 	}
 	else

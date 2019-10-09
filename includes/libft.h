@@ -115,4 +115,6 @@ int					ft_strtoi(char *str, char **endptr);
 
 double				ft_strtod(char *str, char **endptr);
 
+int					ft_isspace(int c);
+
 #endif

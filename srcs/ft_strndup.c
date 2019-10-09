@@ -17,7 +17,7 @@ char	*ft_strndup(const char *src, size_t len)
 	char	*dst;
 	size_t	i;
 
-	if ((dst = ft_strnew(len)) == NULL)
+	if (!(dst = ft_strnew(len)))
 		return (NULL);
 	i = 0;
 	while (src[i] && i < len)

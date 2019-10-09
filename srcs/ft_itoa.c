@@ -12,72 +12,28 @@
 
 #include "libft.h"
 
-static int	ft_size_int(int n)
-{
-	int		count;
-
-	if (n < 0)
-		n = n * -1;
-	count = 0;
-	while (n > 0)
-	{
-		count++;
-		n = n / 10;
-	}
-	return (count);
-}
-
-static char	*ft_itoa_edge(int n)
-{
-	int		size;
-	char	*str;
-
-	size = 11;
-	if (n == 0)
-		size = 1;
-	if (!(str = (char *)malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	str[size--] = '\0';
-	if (n == 0)
-		str[size] = '0';
-	else
-	{
-		str[size--] = '8';
-		str[0] = '-';
-		n = (n / 10) * -1;
-		while (n > 0)
-		{
-			str[size--] = (n % 10) + '0';
-			n = n / 10;
-		}
-	}
-	return (str);
-}
-
 char		*ft_itoa(int n)
 {
-	int		size;
-	char	*str;
+	char			*str;
+	size_t			size;
+	unsigned int	nbr;
 
-	size = ft_size_int(n);
-	if (n == -2147483648 || n == 0)
-		return (ft_itoa_edge(n));
-	if (n < 0)
-		size++;
-	if (!(str = (char *)malloc(sizeof(char) * (size + 1))))
+	nbr = (n < 0) ? -n : n;
+	size = (n < 0) ? 1 : 0;
+	while (nbr > 0)
+	{
+		nbr = nbr / 10;
+		++size;
+	}
+	if (!(str = ft_strnew(size)))
 		return (NULL);
+	nbr = (n < 0) ? -n : n;
+	while (nbr > 0)
+	{
+		str[--size] = (nbr % 10) + '0';
+		nbr = nbr / 10;
+	}
 	if (n < 0)
-	{
-		n = n * -1;
 		str[0] = '-';
-	}
-	str[size] = '\0';
-	size--;
-	while (n > 0)
-	{
-		str[size] = (n % 10) + '0';
-		n = n / 10;
-		size--;
-	}
 	return (str);
 }

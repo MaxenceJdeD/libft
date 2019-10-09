@@ -14,23 +14,25 @@
 
 void	ft_putnbr(int n)
 {
-	if (n == -2147483648)
+	char			str[13];
+	size_t			size;
+	unsigned int	nbr;
+
+	nbr = (n < 0) ? -n : n;
+	size = (n < 0) ? 1 : 0;
+	while (nbr > 0)
 	{
-		ft_putstr("-2147483648");
+		nbr = nbr / 10;
+		++size;
 	}
-	else
+	str[size] = '\0';
+	nbr = (n < 0) ? -n : n;
+	while (nbr > 0)
 	{
-		if (n < 0)
-		{
-			n = n * -1;
-			ft_putchar('-');
-		}
-		if (n >= 10)
-		{
-			ft_putnbr(n / 10);
-			ft_putchar((n % 10) + 48);
-		}
-		if (n < 10)
-			ft_putchar(n + 48);
+		str[--size] = (nbr % 10) + '0';
+		nbr = nbr / 10;
 	}
+	if (n < 0)
+		str[0] = '-';
+	ft_putstr(str);
 }
